@@ -43,7 +43,7 @@ plt.rcParams.update({"font.size": 8, "axes.titlesize": 9,
                      "xtick.labelsize": 8, "ytick.labelsize": 7.5})
 
 # ---------------------------------------------------------------- figure 1
-fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.45))
+fig, axes = plt.subplots(1, 2, figsize=(6.3, 1.90))
 for ax, pool in zip(axes, ["local", "global"]):
     vals = MCC[pool]
     lo = min(min(v) for v in vals.values())
@@ -74,7 +74,7 @@ plt.close(fig)
 print("wrote fig_mcc_by_offset")
 
 # ---------------------------------------------------------------- figure 2
-fig, ax = plt.subplots(figsize=(3.1, 2.75))
+fig, ax = plt.subplots(figsize=(3.1, 2.40))
 y = np.arange(len(CONTRASTS))[::-1]
 for yi, (lab, d, lo, hi) in zip(y, CONTRASTS):
     sig = hi < 0 or lo > 0
